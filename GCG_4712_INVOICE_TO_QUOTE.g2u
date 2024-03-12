@@ -1,0 +1,1641 @@
+Program.Sub.ScreenSU.Start
+Gui.F_Invoice..Create
+Gui.F_Invoice..Caption("Invoice To Quote")
+Gui.F_Invoice..Size(2100,2175)
+Gui.F_Invoice..MinX(0)
+Gui.F_Invoice..MinY(0)
+Gui.F_Invoice..Position(0,0)
+Gui.F_Invoice..BackColor(-2147483633)
+Gui.F_Invoice..MousePointer(0)
+Gui.F_Invoice..Event(UnLoad,F_Invoice_UnLoad)
+Gui.F_Invoice..MaxButton(False)
+Gui.F_Invoice..Sizeable(False)
+Gui.F_Invoice.lbl1.Create(Label,"Invoice No",True,960,255,0,105,105,True,0,"Arial",8,-2147483633,0)
+Gui.F_Invoice.txtInvoiceNo.Create(TextBox,"",True,1215,300,0,105,315,True,0,"Arial",8,-2147483643,1)
+Gui.F_Invoice.txtInvoiceNo.MaxLength(7)
+Gui.F_Invoice.cmdInvoiceBrw.Create(Button)
+Gui.F_Invoice.cmdInvoiceBrw.Size(390,330)
+Gui.F_Invoice.cmdInvoiceBrw.Position(1455,300)
+Gui.F_Invoice.cmdInvoiceBrw.Caption("^")
+Gui.F_Invoice.cmdInvoiceBrw.Event(Click,cmdInvoiceBrw_Click)
+Gui.F_Invoice.cmdGenerate.Create(Button)
+Gui.F_Invoice.cmdGenerate.Size(1140,375)
+Gui.F_Invoice.cmdGenerate.Position(105,1395)
+Gui.F_Invoice.cmdGenerate.Caption("Generate")
+Gui.F_Invoice.cmdGenerate.Event(Click,cmdGenerate_Click)
+Gui.F_Invoice.txtCustomer.Create(TextBox,"",True,1215,300,0,105,930,True,0,"Arial",8,-2147483643,1)
+Gui.F_Invoice.lbl2.Create(Label,"To Customer",True,1170,255,0,105,720,True,0,"Arial",8,-2147483633,0)
+Gui.F_Invoice.cmdCustomerBrw.Create(Button)
+Gui.F_Invoice.cmdCustomerBrw.Size(390,330)
+Gui.F_Invoice.cmdCustomerBrw.Position(1455,915)
+Gui.F_Invoice.cmdCustomerBrw.Caption("^")
+Gui.F_Invoice.cmdCustomerBrw.Event(Click,cmdCustomerBrw_Click)
+Gui.frmQuote..Create
+Gui.frmQuote..Caption("Copy to single Quote")
+Gui.frmQuote..Size(18450,13380)
+Gui.frmQuote..MinX(0)
+Gui.frmQuote..MinY(0)
+Gui.frmQuote..Position(0,0)
+Gui.frmQuote..BackColor(-2147483633)
+Gui.frmQuote..MousePointer(0)
+Gui.frmQuote..Event(UnLoad,frmQuote_UnLoad)
+Gui.frmQuote.CSQ_cmdBrow.Create(Button)
+Gui.frmQuote.CSQ_cmdBrow.Size(360,375)
+Gui.frmQuote.CSQ_cmdBrow.Position(3855,120)
+Gui.frmQuote.CSQ_cmdBrow.Caption("^")
+Gui.frmQuote.CSQ_cmdBrow.Event(Click,CSQ_cmdBrow_Click)
+Gui.frmQuote.lbl1.Create(Label,"Order No :",True,855,255,0,135,225,True,0,"Arial",8,-2147483633,0)
+Gui.frmQuote.CSQ_txtTranno.Create(TextBox,"",True,1815,300,0,1065,150,True,0,"Arial",8,-2147483643,1)
+Gui.frmQuote.GsCopyfrom.Create(GsGridControl)
+Gui.frmQuote.GsCopyfrom.Size(17820,3210)
+Gui.frmQuote.GsCopyfrom.Position(75,720)
+Gui.frmQuote.CSQ_selectALL.Create(Button)
+Gui.frmQuote.CSQ_selectALL.Size(1020,375)
+Gui.frmQuote.CSQ_selectALL.Position(16890,300)
+Gui.frmQuote.CSQ_selectALL.Caption("Select All")
+Gui.frmQuote.CSQ_selectALL.Event(Click,CSQ_selectALL_Click)
+Gui.frmQuote.CSQ_CopyTo.Create(Button)
+Gui.frmQuote.CSQ_CopyTo.Size(1890,375)
+Gui.frmQuote.CSQ_CopyTo.Position(90,4035)
+Gui.frmQuote.CSQ_CopyTo.Caption("Copy Selected")
+Gui.frmQuote.CSQ_CopyTo.Event(Click,CSQ_CopyTo_Click)
+Gui.frmQuote.GsCopyTo.Create(GsGridControl)
+Gui.frmQuote.GsCopyTo.Size(17850,7305)
+Gui.frmQuote.GsCopyTo.Position(120,4515)
+Gui.frmQuote.GsCopyTo.Event(RowCellClick,GsCopyTo_RowCellClick)
+Gui.frmQuote.CSQ_Process.Create(Button)
+Gui.frmQuote.CSQ_Process.Size(1065,375)
+Gui.frmQuote.CSQ_Process.Position(16860,4065)
+Gui.frmQuote.CSQ_Process.Caption("Process")
+Gui.frmQuote.CSQ_Process.Event(Click,CSQ_Process_Click)
+Gui.frmQuote.lbl2.Create(Label,"Customer :",True,885,255,0,13845,4185,True,0,"Arial",8,-2147483633,0)
+Gui.frmQuote.CSQ_txtCustomer.Create(TextBox,"",True,1215,300,0,14745,4095,True,0,"Arial",8,-2147483643,1)
+Gui.frmQuote.CSQ_txtCustomer.Event(LostFocus,CSQ_txtCustomer_LostFocus)
+Gui.frmQuote.CSQ_cmdcustomer.Create(Button)
+Gui.frmQuote.CSQ_cmdcustomer.Size(420,375)
+Gui.frmQuote.CSQ_cmdcustomer.Position(16050,4065)
+Gui.frmQuote.CSQ_cmdcustomer.Caption("^")
+Gui.frmQuote.CSQ_cmdcustomer.Event(Click,CSQ_cmdcustomer_Click)
+Gui.frmQuote.CSQ_cmdView.Create(Button)
+Gui.frmQuote.CSQ_cmdView.Size(855,360)
+Gui.frmQuote.CSQ_cmdView.Position(2925,120)
+Gui.frmQuote.CSQ_cmdView.Caption("View")
+Gui.frmQuote.CSQ_cmdView.Event(Click,CSQ_cmdView_Click)
+Gui.frmQuote.cmdInsertLine.Create(Button)
+Gui.frmQuote.cmdInsertLine.Size(1470,375)
+Gui.frmQuote.cmdInsertLine.Position(2160,4035)
+Gui.frmQuote.cmdInsertLine.Caption("Insert Comments")
+Gui.frmQuote.cmdInsertLine.Event(Click,cmdInsertLine_Click)
+Gui.frmQuote.framecomments.Create(Frame)
+Gui.frmQuote.framecomments.Visible(False)
+Gui.frmQuote.framecomments.Size(9090,4125)
+Gui.frmQuote.framecomments.Position(4005,5535)
+Gui.frmQuote.framecomments.Caption("Comments")
+Gui.frmQuote.txtcomments.Create(TextboxM)
+Gui.frmQuote.txtcomments.Size(8625,1860)
+Gui.frmQuote.txtcomments.Position(210,1710)
+Gui.frmQuote.txtcomments.Parent("framecomments")
+Gui.frmQuote.txtcomments.MaxLength(300)
+Gui.frmQuote.cmdOk.Create(Button)
+Gui.frmQuote.cmdOk.Size(915,375)
+Gui.frmQuote.cmdOk.Position(210,3630)
+Gui.frmQuote.cmdOk.Parent("framecomments")
+Gui.frmQuote.cmdOk.Caption("Ok")
+Gui.frmQuote.cmdOk.Event(Click,cmdOk_Click)
+Gui.frmQuote.cmdCancel.Create(Button)
+Gui.frmQuote.cmdCancel.Size(855,375)
+Gui.frmQuote.cmdCancel.Position(1185,3630)
+Gui.frmQuote.cmdCancel.Parent("framecomments")
+Gui.frmQuote.cmdCancel.Caption("Cancel")
+Gui.frmQuote.cmdCancel.Event(Click,cmdCancel_Click)
+Gui.frmQuote.lbl3.Create(Label,"Line No :",True,750,255,0,210,375,True,0,"Arial",8,-2147483633,0)
+Gui.frmQuote.lbl3.Parent("framecomments")
+Gui.frmQuote.txtLno.Create(TextBox,"",True,660,300,0,1080,315,True,0,"Arial",8,-2147483643,1)
+Gui.frmQuote.txtLno.Parent("framecomments")
+Gui.frmQuote.lblParts.Create(Label,"Parts :",False,750,255,0,2040,375,True,0,"Arial",8,-2147483633,0)
+Gui.frmQuote.lblParts.Parent("framecomments")
+Gui.frmQuote.txtpart.Create(TextBox,"",False,2970,300,0,2820,315,True,0,"Arial",8,-2147483643,1)
+Gui.frmQuote.txtpart.Parent("framecomments")
+Gui.frmQuote.txtpart.ControlGroup(1)
+Gui.frmQuote.txtdesc.Create(TextBox,"",True,5565,300,0,210,1005,True,0,"Arial",8,-2147483643,1)
+Gui.frmQuote.txtdesc.Parent("framecomments")
+Gui.frmQuote.txtdesc.ControlGroup(1)
+Gui.frmQuote.txtdesc.MaxLength(30)
+Gui.frmQuote.lbl5.Create(Label,"Description :",True,1800,255,0,210,810,True,0,"Arial",8,-2147483633,0)
+Gui.frmQuote.lbl5.Parent("framecomments")
+Gui.frmQuote.cmdBrowParts.Create(Button)
+Gui.frmQuote.cmdBrowParts.Size(525,330)
+Gui.frmQuote.cmdBrowParts.Position(5910,315)
+Gui.frmQuote.cmdBrowParts.Parent("framecomments")
+Gui.frmQuote.cmdBrowParts.Caption("^")
+Gui.frmQuote.cmdBrowParts.Event(Click,cmdBrowParts_Click)
+Gui.frmQuote.cmdBrowParts.Visible(False)
+Gui.frmQuote.lbl6.Create(Label,"Qty",True,1935,255,0,210,1695,True,0,"Arial",8,-2147483633,0)
+Gui.frmQuote.lbl6.Parent("framecomments")
+Gui.frmQuote.txtQTY.Create(TextBox,"",True,1215,300,0,210,1905,True,0,"Arial",8,-2147483643,1)
+Gui.frmQuote.txtQTY.Parent("framecomments")
+Gui.frmQuote.txtQTY.NumericOnly(2)
+Gui.frmQuote.txtQTY.ControlGroup(1)
+Gui.frmQuote.lbllongdesc.Create(Label,"Long Description :",True,1800,255,0,210,1425,True,0,"Arial",8,-2147483633,0)
+Gui.frmQuote.lbllongdesc.Parent("framecomments")
+Gui.frmQuote.cmdInsertParts.Create(Button)
+Gui.frmQuote.cmdInsertParts.Size(1470,375)
+Gui.frmQuote.cmdInsertParts.Position(3825,4050)
+Gui.frmQuote.cmdInsertParts.Caption("Insert Parts")
+Gui.frmQuote.cmdInsertParts.Event(Click,cmdInsertParts_Click)
+Gui.frmQuote.ddlTrans.Create(DropDownList)
+Gui.frmQuote.ddlTrans.Size(1740,330)
+Gui.frmQuote.ddlTrans.Position(6600,165)
+Gui.frmQuote.lblPrimaryTran.Create(Label,"Primary InvoiceNo :",True,1530,255,0,4995,270,True,0,"Arial",8,-2147483633,0)
+Gui.frmQuote.chkOvrQuote.Create(CheckBox)
+Gui.frmQuote.chkOvrQuote.Size(2520,360)
+Gui.frmQuote.chkOvrQuote.Position(8955,150)
+Gui.frmQuote.chkOvrQuote.Caption("Overwrite Quote")
+Gui.frmQuote.chkOvrQuote.FontStyle(True,False,False,False,False)
+Gui.frmQuote.chkOvrQuote.DefaultValue("")
+Gui.frmQuote.chkOvrQuote.Visible(False)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.External.Include.Library("GCG_4712_ORDUPL_UPLOAD.lib")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.Try
+
+	V.Local.sFile.Declare(String)
+	V.Local.bExists.Declare(Boolean)
+	V.Local.sRet.Declare(String)
+	V.Local.sSQL.Declare(String)
+
+	f.Intrinsic.UI.InvokeWaitDialog("Processing")
+
+	'Check to make sure they have a GSSParamccc.txt or GSSParam.txt file before moving forward.
+	F.Intrinsic.String.Build("{0}\GSSPARAM{1}.txt",V.Caller.FilesDir,V.Caller.CompanyCode,V.Local.sFile)
+	F.Intrinsic.File.Exists(V.Local.sFile,V.Local.bExists)
+	F.Intrinsic.Control.If(V.Local.bExists,=,False)
+		'We don't have a GSSParamccc.txt so lets see if we have a generic.
+		F.Intrinsic.String.Build("{0}\GSSPARAM.txt",V.Caller.FilesDir,V.Local.sFile)
+		F.Intrinsic.File.Exists(V.Local.sFile,V.Local.bExists)
+		F.Intrinsic.Control.If(V.Local.bExists,=,False)
+			'We don't have a generic so create it.
+			F.Intrinsic.String.Build("WEB ORDER DIRECTORY   = {0}\WEB_ORDERS{1}WEB ERROR DIRECTORY   = {0}\WEB_ORDERS\WEB_ERRORS{1}WEB CONVERTED DIR     = {0}\WEB_ORDERS\CONVERTED{1}WEB UPLOADED DIRECTORY= {0}\WEB_ORDERS\UPLOADED{1}EMAIL FROM ADDRESS    = {1}EMAIL TO ADDRESS      = ",V.Caller.FilesDir,V.Ambient.NewLine,V.Local.sRet)
+			F.Intrinsic.File.String2File(V.Local.sFile,V.Local.sRet)
+			'Now create the directories
+			F.Intrinsic.String.Build("{0}\WEB_ORDERS",V.Caller.FilesDir,V.Local.sFile)
+			F.Intrinsic.File.CreateDir(V.Local.sFile)
+			F.Intrinsic.String.Build("{0}\WEB_ORDERS\WEB_ERRORS",V.Caller.FilesDir,V.Local.sFile)
+			F.Intrinsic.File.CreateDir(V.Local.sFile)
+			F.Intrinsic.String.Build("{0}\WEB_ORDERS\CONVERTED",V.Caller.FilesDir,V.Local.sFile)
+			F.Intrinsic.File.CreateDir(V.Local.sFile)
+			F.Intrinsic.String.Build("{0}\WEB_ORDERS\UPLOADED",V.Caller.FilesDir,V.Local.sFile)
+			F.Intrinsic.File.CreateDir(V.Local.sFile)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	
+	F.ODBC.Connection!Con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+	
+	f.Intrinsic.Control.CallSub(Load_Grid)
+	
+		'I - Invoice to New Quote
+		'O - Order to New Quote
+		'SO - Order to New Order
+		'QO -  Quote to New Quote
+		
+	'Create Invoice/OrderNO Type Ahead
+	f.Intrinsic.Control.If(v.Caller.Switches,=,"I")
+		V.Local.sSQL.Set("SELECT INVOICE, RTRIM(INVOICE) AS INVOICE FROM V_ORDER_HIST_HEAD ORDER BY INVOICE ASC")
+		gui.frmQuote..Caption("Copy Invoice")
+		gui.frmQuote.lblPrimaryTran.Caption("Primary Invoice No")
+	f.Intrinsic.Control.ElseIf(v.Caller.Switches,=,"O","or",v.Caller.Switches,=,"SO")
+		V.Local.sSQL.Set("SELECT Order_no, RTRIM(Order_no) AS INVOICE FROM V_ORDER_Header ORDER BY Order_no ASC")
+		gui.frmQuote..Caption("Copy Orders")
+		gui.frmQuote.lblPrimaryTran.Caption("Primary Order No")
+	f.Intrinsic.Control.ElseIf(v.Caller.Switches,=,"QO")
+		V.Local.sSQL.Set("SELECT Quote_no, RTRIM(Quote_no) AS INVOICE FROM V_Quote_Header ORDER BY Quote_no ASC")
+		gui.frmQuote..Caption("Copy Quotes")
+		gui.frmQuote.lblPrimaryTran.Caption("Primary Quote No")
+		gui.frmQuote.chkOvrQuote.Visible(true)
+	f.Intrinsic.Control.EndIf 
+
+	F.Data.Dictionary.CreateFromSQL("Invoice","Con",V.Local.sSQL)
+	gui.frmQuote.CSQ_txtTranno.AddAutoCompleteItem("Invoice","Dictionary")
+	'Create customer type ahead
+	F.Data.Dictionary.CreateFromSQL("Customer","Con","SELECT RTRIM(CUSTOMER) AS CUSTOMER, RTRIM(CUSTOMER) AS CUSTOMER FROM V_CUSTOMER_MASTER UNION SELECT RTRIM(PROSPECT) AS CUSTOMER, RTRIM(PROSPECT) AS CUSTOMER FROM V_PROSPECT_MASTER ORDER BY CUSTOMER ASC")
+	gui.frmQuote.CSQ_txtCustomer.AddAutoCompleteItem("Customer","Dictionary")
+
+	f.Intrinsic.UI.CloseWaitDialog 
+
+
+'	gui.frmQuote.GsCopyTo.Anchor(7)
+	gui.frmQuote..WindowState(2)
+	gui.frmQuote..Show
+	gui.frmQuote.CSQ_txtTranno.SetFocus
+
+F.Intrinsic.Control.Catch
+	f.Intrinsic.UI.CloseWaitDialog 
+	F.Intrinsic.Control.CallSub(TryCatch,"Sub",V.Ambient.CurrentSubroutine,"Error",V.Ambient.ErrorNumber,"Desc",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.TryCatch.Start
+V.Local.sError.Declare(String)
+Function.Intrinsic.String.Concat("Project: GCG_4712_INVOICE_TO_QUOTE.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Args.Sub,V.Ambient.NewLine,"Error Occurred ",V.Args.Error," with description ",V.Args.Desc,V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError)
+F.Intrinsic.Control.CallSub(F_Invoice_UnLoad)
+Program.Sub.TryCatch.End
+
+Program.Sub.F_Invoice_UnLoad.Start
+F.Intrinsic.Control.Try
+
+	F.ODBC.Connection!Con.Close
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.EndTry
+Program.Sub.F_Invoice_UnLoad.End
+
+Program.Sub.cmdInvoiceBrw_Click.Start
+F.Intrinsic.Control.Try
+
+	V.Local.sRet.Declare(String)
+	V.Local.sSSQL.Declare(String)
+
+	f.Intrinsic.Control.If(v.Caller.Switches,=,"O")
+'		'select from Order
+		V.Local.sSSQL.set("select distinct ORD.ORDER_NO,'',ORD.CUSTOMER,customer_PO, NAME_CUSTOMER_SHIP, ADDRESS_1_SHIP, CITY_SHIP, STATE_SHIP, CODE_ZIP_SHIP from  v_ORDER_Header ORD") 
+		f.Intrinsic.String.Build(" {0} join v_order_lines DET on ORD.order_no= DET.order_no left join v_ORDER_SHIP_TO SHIP on ORD.Ship_ID = SHIP.Ship_ID and ORD.Order_no = SHIP.Order_no where DET.Record_NO < '8000' ORDER BY 1 ASC ",V.Local.sSSQL,V.Local.sSSQL) 
+		F.Intrinsic.UI.Browser("Invoices","Con",V.Local.sSSQL,"Order*!**!*Customer*!*Customer Name*!*Address*!*City*!*State*!*Zip","80*!*0*!*80*!*150*!*150*!*80*!*40*!*50",V.Local.sRet)
+	f.Intrinsic.Control.Else.If(v.Caller.Switches,=,"I")
+		'Invoice
+		V.Local.sSSQL.set("SELECT INVOICE, ORDER_NO, CUSTOMER,customer_PO, NAME_CUSTOMER_SHIP, ADDRESS1_SHIP, CITY_SHIP, STATE_SHIP, ZIP_SHIP FROM V_ORDER_HIST_HEAD ORDER BY INVOICE ASC ") 
+		F.Intrinsic.UI.Browser("Invoices","Con",V.Local.sSSQL,"Invoice*!*Order*!*Customer*!*Customer PO*!*Customer Name*!*Address*!*City*!*State*!*Zip","80*!*80*!*80*!*80*!*150*!*150*!*80*!*40*!*50",V.Local.sRet)
+	f.Intrinsic.Control.EndIf 
+
+
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		V.Local.sRet.RedimPreserve(0,3)
+		Gui.F_Invoice.txtInvoiceNo.Text(V.Local.sRet(0).Trim)
+		Gui.F_Invoice.txtCustomer.Text(V.Local.sRet(2).Trim)
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(TryCatch,"Sub",V.Ambient.CurrentSubroutine,"Error",V.Ambient.ErrorNumber,"Desc",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdInvoiceBrw_Click.End
+
+Program.Sub.cmdGenerate_Click.Start
+F.Intrinsic.Control.Try
+
+	V.Local.sSQL.Declare(String)
+	V.Local.sRet.Declare(String)
+	V.Local.iCount.Declare(Long)
+	V.Local.dStartTime.Declare(Date)
+
+
+	Gui.F_Invoice..Visible(False)
+
+	f.Intrinsic.UI.InvokeWaitDialog("Processing")
+
+	f.Intrinsic.Control.If(v.Caller.Switches,=,"O")
+'		'From Orders
+'		F.Intrinsic.String.Build("SELECT '{0}' AS CUSTOMER, RTRIM(PART) AS PART,UM_ORDER as UM, RTRIM(LOCATION) AS LOCATION, QTY_ORDERED, RTRIM(' ') AS SHIP_TO_NAME, RTRIM(' ') AS SHIP_TO_ADDRESS1, RTRIM(' ') AS SHIP_TO_ADDRESS2, RTRIM(' ') AS SHIP_TO_CITY, RTRIM(' ') AS SHIP_TO_STATE, RTRIM(' ') AS SHIP_TO_ZIP, RTRIM(' ') AS SHIP_TO_COUNTRY, RTRIM(' ') AS SHIP_TO_ATTN FROM V_ORDER_LINES WHERE Record_NO < '8000' AND Order_no = '{1}' and FLAG_BOM <> 'Y' ORDER BY Record_No ASC",V.Screen.F_Invoice!txtCustomer.Text.Trim,V.Screen.F_Invoice!txtInvoiceNo.Text.Trim,V.Local.sSQL)
+		F.Intrinsic.String.Build("SELECT '{0}' AS CUSTOMER, RTRIM(PART) AS PART,UM_ORDER as UM, RTRIM(LOCATION) AS LOCATION, QTY_ORDERED, RTRIM(' ') AS SHIP_TO_NAME, RTRIM(' ') AS SHIP_TO_ADDRESS1, RTRIM(' ') AS SHIP_TO_ADDRESS2, RTRIM(' ') AS SHIP_TO_CITY, RTRIM(' ') AS SHIP_TO_STATE, RTRIM(' ') AS SHIP_TO_ZIP, RTRIM(' ') AS SHIP_TO_COUNTRY, RTRIM(' ') AS SHIP_TO_ATTN,Head.User_1,Head.User_2,Head.User_3,Head.User_4,Head.User_5 FROM V_ORDER_Header Head join V_ORDER_LINES Det on Head.Order_No = Det.Order_NO WHERE Record_NO < '8000' AND Head.Order_no = '{1}' and FLAG_BOM <> 'Y' ORDER BY Record_No ASC",V.Screen.F_Invoice!txtCustomer.Text.Trim,V.Screen.F_Invoice!txtInvoiceNo.Text.Trim,V.Local.sSQL)
+	f.Intrinsic.Control.Else.If(v.Caller.Switches,=,"I")
+		'We need to create a datatable of the Order_Hist_Line table to get all of the data we need to create the quote.
+		F.Intrinsic.String.Build("SELECT '{0}' AS CUSTOMER, RTRIM(PART) AS PART,UM, RTRIM(LOCATION) AS LOCATION, QTY_ORDERED, RTRIM(' ') AS SHIP_TO_NAME, RTRIM(' ') AS SHIP_TO_ADDRESS1, RTRIM(' ') AS SHIP_TO_ADDRESS2, RTRIM(' ') AS SHIP_TO_CITY, RTRIM(' ') AS SHIP_TO_STATE, RTRIM(' ') AS SHIP_TO_ZIP, RTRIM(' ') AS SHIP_TO_COUNTRY, RTRIM(' ') AS SHIP_TO_ATTN,Head.User_1,Head.User_2,Head.User_3,Head.User_4,Head.User_5 FROM V_ORDER_HIST_head Head join V_ORDER_HIST_LINE Det WHERE ORDER_LINE < '8000' AND Head.INVOICE = '{1}' and FLAG_BOM <> 'Y' ORDER BY ORDER_LINE ASC",V.Screen.F_Invoice!txtCustomer.Text.Trim,V.Screen.F_Invoice!txtInvoiceNo.Text.Trim,V.Local.sSQL)
+	f.Intrinsic.Control.EndIf 
+	F.Data.DataTable.CreateFromSQL("Invoices","Con",V.Local.sSQL,True)
+
+	'loop through the data table and see if we have a newer rev of the part an use it if we do.
+	F.Intrinsic.Control.For(V.Local.iCount,V.DataTable.Invoices.RowCount--)
+		F.Intrinsic.String.Build("SELECT RTRIM(PART) As Part FROM V_INVENTORY_MSTR WHERE RTRIM(SUBSTRING(PART + '                    ',1,17)) = RTRIM(SUBSTRING('{0}' + '                    ',1,17)) AND (FLAG_INACTIVE = '' OR FLAG_INACTIVE = 'N') AND RIGHT(Part, 3) <> '-- ' ORDER BY PART DESC ",V.DataTable.Invoices(V.Local.iCount).Part!FieldValTrim,V.Local.sSQL)
+		F.ODBC.Connection!Con.OpenLocalRecordsetRO("rstPart",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.Con!rstPart.EOF,=,False)
+			'We have a part so use it.
+			F.Data.DataTable.SetValue("Invoices",V.Local.iCount,"Part",V.ODBC.Con!rstPart.FieldValTrim!PART)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.Con!rstPart.Close
+	F.Intrinsic.Control.Next(V.Local.iCount)
+
+	'Get ship to information
+	F.Intrinsic.String.Build("SELECT RTRIM(NAME_CUSTOMER_SHIP) AS NAME, RTRIM(ADDRESS1_SHIP) AS ADDRESS1, RTRIM(ADDRESS2_SHIP) AS ADDRESS2, RTRIM(CITY_SHIP) AS CITY, RTRIM(STATE_SHIP) AS STATE, RTRIM(CODE_ZIP_SHIP) AS ZIP, RTRIM(COUNTRY_SHIP) AS COUNTRY, RTRIM(ATTENTION_SHIP) AS ATTN FROM V_CUSTOMER_SHIPTO WHERE CUSTOMER = '{0}' ",V.Screen.F_Invoice!txtCustomer.Text.Trim,V.Local.sSQL)
+	F.ODBC.Connection!Con.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.Con!rst.EOF,=,False)
+		'Set all of the fields in the DT with the ship info.
+		F.Data.DataTable.SetValue("Invoices",-1,"SHIP_TO_NAME",V.ODBC.Con!rst.FieldValTrim!NAME,"SHIP_TO_ADDRESS1",V.ODBC.Con!rst.FieldValTrim!ADDRESS1,"SHIP_TO_ADDRESS2",V.ODBC.Con!rst.FieldValTrim!ADDRESS2,"SHIP_TO_CITY",V.ODBC.Con!rst.FieldValTrim!CITY,"SHIP_TO_STATE",V.ODBC.Con!rst.FieldValTrim!STATE,"SHIP_TO_ZIP",V.ODBC.Con!rst.FieldValTrim!ZIP,"SHIP_TO_COUNTRY",V.ODBC.Con!rst.FieldValTrim!COUNTRY,"SHIP_TO_ATTN",V.ODBC.Con!rst.FieldValTrim!ATTN)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Con!rst.Close
+
+
+	F.Data.DataView.Create("Invoices","InvoicesView",22)
+
+	F.Data.DataView.ToString("Invoices","InvoicesView","CUSTOMER*!*PART*!*UM*!*LOCATION*!*QTY_ORDERED*!*SHIP_TO_NAME*!*SHIP_TO_ADDRESS1*!*SHIP_TO_ADDRESS2*!*SHIP_TO_CITY*!*SHIP_TO_STATE*!*SHIP_TO_ZIP*!*SHIP_TO_COUNTRY*!*SHIP_TO_ATTN*!*USER_4*!*USER_5","*!*","@!@",V.Local.sRet)
+	'Sent the string to the UDT
+
+	'Pass UOM - UM RANJIT
+	F.Intrinsic.Variable.LoadUDTFromString(V.uGlobal.uOrders,"Customer*!*Part*!*UM*!*Location*!*Qty_Order*!*Ship_To_Name*!*SHIP_TO_ADDRESS1*!*SHIP_TO_ADDRESS2*!*SHIP_TO_CITY*!*SHIP_TO_STATE*!*SHIP_TO_ZIP*!*SHIP_TO_COUNTRY*!*SHIP_TO_ATTN*!*Header_User4*!*Header_User5",V.Local.sRet,"@!@","*!*",False)
+
+	'Call the sub and create the Quote.
+
+	V.Local.dStartTime.Set(V.Ambient.Now)
+	
+	F.Intrinsic.Control.CallSub(ORDUPLUpload)
+
+'	F.Intrinsic.String.Build("SELECT Quote_No FROM Quote_Header WHERE Record_Type = 'A' AND Last_Chg_Pgm = 'ORDUP3' AND Date_Quote = '{0}' AND Time_Last_Chg > '{1}' AND Time_Last_Chg < '{2}' ORDER BY Quote_No DESC",V.Ambient.Date.FormatMMDDYY,V.Local.dStartTime.FormatHHnnSS,V.Ambient.Time.FormatHHnnSS,V.Local.sSQL)
+	F.Intrinsic.String.Build("SELECT Quote_No FROM v_Quote_Header WHERE  USER_5 = 'NEW' ORDER BY Quote_No DESC","",V.Local.sSQL)
+
+	F.Intrinsic.UI.Sleep(5)	
+	F.ODBC.Connection!Con.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.Con!rst.EOF,=,False)
+	
+	'Make sure Quote number is not blank
+
+		F.Intrinsic.String.Build("{0}!*!O",V.ODBC.Con!rst.FieldValTrim!Quote_No,V.Local.sRet)		
+		F.Global.General.CallWrapperAsync(251000,V.Local.sRet)
+
+	F.Intrinsic.Control.Else
+		'Quote is blank so let them know to check out the error file.
+		f.Intrinsic.UI.CloseWaitDialog 
+		F.Intrinsic.String.Build("Error occurred, check Global\Files\ORDUP{0}.ERR for more information.",V.Caller.CompanyCode.Trim,V.Local.sRet)
+		F.Intrinsic.UI.Msgbox(V.Local.sRet,"Warning")
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Con!rst.Close
+
+	F.Intrinsic.Control.CallSub(F_Invoice_UnLoad)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(TryCatch,"Sub",V.Ambient.CurrentSubroutine,"Error",V.Ambient.ErrorNumber,"Desc",V.Ambient.ErrorDescription)
+	f.Intrinsic.UI.CloseWaitDialog 
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdGenerate_Click.End
+
+Program.Sub.cmdCustomerBrw_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sRet.Declare(String)
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	F	Intrinsic.UI.Browser(225,"",V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		'Split the string and set the customer number
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.F_Invoice.txtCustomer.Text(V.Local.sRet(0).Trim)
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(TryCatch,"Sub",V.Ambient.CurrentSubroutine,"Error",V.Ambient.ErrorNumber,"Desc",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdCustomerBrw_Click.End
+
+Program.Sub.CSQ_selectALL_Click.Start
+F.Intrinsic.Control.Try
+
+	f.Data.DataTable.SetValue("DtLines",-1,"Select",True)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(TryCatch,"Sub",V.Ambient.CurrentSubroutine,"Error",V.Ambient.ErrorNumber,"Desc",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.CSQ_selectALL_Click.End
+
+Program.Sub.CSQ_Process_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sRet.Declare
+V.Local.dStartTime.Declare
+V.Local.sSQL.Declare
+V.Local.iCount.Declare
+V.Local.sUPSQL.Declare
+
+	f.Intrinsic.Control.If(v.datatable.DTCopyTo.RowCount,=,0)
+		f.Intrinsic.UI.Msgbox("No lines selected to copy")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	
+	f.Intrinsic.Control.If(v.Screen.frmQuote!chkOvrQuote.Value,=,1)
+	'overwrite existing Quote
+		f.Intrinsic.Control.CallSub(OverWrite_Quote)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.Endif
+	
+	f.Intrinsic.Control.If(V.Screen.frmQuote!CSQ_txtCustomer.Text.Trim,=,"")
+		f.Intrinsic.UI.Msgbox("Please select customer")
+		gui.frmQuote.CSQ_txtCustomer.SetFocus
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	
+	f.Intrinsic.Control.BlockEvents
+	f.Intrinsic.UI.InvokeWaitDialog("Processing")
+
+	
+
+	F.Data.DataTable.SetValue("DTCopyTo",-1,"CUSTOMER",V.Screen.frmQuote!CSQ_txtCustomer.Text.Trim)
+	
+	'Get ship to information
+	F.Intrinsic.String.Build("SELECT RTRIM(NAME_CUSTOMER_SHIP) AS NAME, RTRIM(ADDRESS1_SHIP) AS ADDRESS1, RTRIM(ADDRESS2_SHIP) AS ADDRESS2, RTRIM(CITY_SHIP) AS CITY, RTRIM(STATE_SHIP) AS STATE, RTRIM(CODE_ZIP_SHIP) AS ZIP, RTRIM(COUNTRY_SHIP) AS COUNTRY, RTRIM(ATTENTION_SHIP) AS ATTN FROM V_CUSTOMER_SHIPTO WHERE CUSTOMER = '{0}' ",V.Screen.frmQuote!CSQ_txtCustomer.Text.Trim,V.Local.sSQL)
+	F.ODBC.Connection!Con.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.Con!rst.EOF,=,False)
+		'Set all of the fields in the DT with the ship info.
+		F.Data.DataTable.SetValue("DTCopyTo",-1,"SHIP_TO_NAME",V.ODBC.Con!rst.FieldValTrim!NAME,"SHIP_TO_ADDRESS1",V.ODBC.Con!rst.FieldValTrim!ADDRESS1,"SHIP_TO_ADDRESS2",V.ODBC.Con!rst.FieldValTrim!ADDRESS2,"SHIP_TO_CITY",V.ODBC.Con!rst.FieldValTrim!CITY,"SHIP_TO_STATE",V.ODBC.Con!rst.FieldValTrim!STATE,"SHIP_TO_ZIP",V.ODBC.Con!rst.FieldValTrim!ZIP,"SHIP_TO_COUNTRY",V.ODBC.Con!rst.FieldValTrim!COUNTRY,"SHIP_TO_ATTN",V.ODBC.Con!rst.FieldValTrim!ATTN)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Con!rst.Close
+	
+	F.Intrinsic.Control.For(V.Local.iCount,V.DataTable.DTCopyTo.RowCount--)
+		F.Intrinsic.String.Build("SELECT RTRIM(PART) As Part FROM V_INVENTORY_MSTR WHERE RTRIM(SUBSTRING(PART + '                    ',1,17)) = RTRIM(SUBSTRING('{0}' + '                    ',1,17)) AND (FLAG_INACTIVE = '' OR FLAG_INACTIVE = 'N') AND RIGHT(Part, 3) <> '-- ' ORDER BY PART DESC ",V.DataTable.DTCopyTo(V.Local.iCount).Part!FieldValTrim,V.Local.sSQL)
+		F.ODBC.Connection!Con.OpenLocalRecordsetRO("rstPart",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.Con!rstPart.EOF,=,False)
+			'We have a part so use it.
+			F.Data.DataTable.SetValue("DTCopyTo",V.Local.iCount,"Part",V.ODBC.Con!rstPart.FieldValTrim!PART)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.Con!rstPart.Close
+	F.Intrinsic.Control.Next(V.Local.iCount)
+	
+	f.Data.DataTable.AddColumn("DTCopyTo","Trans","string")
+'	f.Intrinsic.Control.If(v.Caller.Switches,=,"O","or",v.Caller.Switches,=,"I",v.Caller.Switches,=,"QO")
+'		f.Data.DataTable.SetValue("DTCopyTo",-1,"Trans","Q")
+'		F.Intrinsic.String.Build("SELECT top 1 Quote_No FROM Quote_Header WHERE Last_Chg_Pgm = 'ORDUP3' AND Date_Quote = '{0}' AND Time_Last_Chg > '{1}' AND Time_Last_Chg < '{2}' ORDER BY Quote_No DESC",V.Ambient.Date.FormatMMDDYY,V.Local.dStartTime.FormatHHnnSS,V.Ambient.Time.FormatHHnnSS,V.Local.sSQL)
+'	f.Intrinsic.Control.elseIf(v.Caller.Switches,=,"SO")
+'		f.Data.DataTable.SetValue("DTCopyTo",-1,"Trans","O")
+'		F.Intrinsic.String.Build("SELECT top 1 Order_No FROM Order_Header WHERE Last_Chg_Pgm = 'ORDUP3' AND Date_Order = '{0}' AND Time_Last_Chg > '{1}' AND Time_Last_Chg < '{2}' ORDER BY Order_No DESC",V.Ambient.Date.FormatMMDDYY,V.Local.dStartTime.FormatHHnnSS,V.Ambient.Time.FormatHHnnSS,V.Local.sSQL)
+'	f.Intrinsic.Control.EndIf
+
+	f.Intrinsic.Control.If(v.Caller.Switches,=,"O","or",v.Caller.Switches,=,"I",v.Caller.Switches,=,"QO")
+		f.Data.DataTable.SetValue("DTCopyTo",-1,"Trans","Q")
+		F.Intrinsic.String.Build("SELECT top 1 Quote_No FROM Quote_Header WHERE Last_Chg_Pgm = 'ORDUP3' AND Date_Quote = '{0}'  ORDER BY Quote_No DESC",V.Ambient.Date.FormatMMDDYY,V.Local.sSQL)
+	f.Intrinsic.Control.elseIf(v.Caller.Switches,=,"SO")
+		f.Data.DataTable.SetValue("DTCopyTo",-1,"Trans","O")
+		F.Intrinsic.String.Build("SELECT top 1 Order_No FROM Order_Header WHERE Last_Chg_Pgm = 'ORDUP3' AND Date_Order = '{0}'  ORDER BY Order_No DESC",V.Ambient.Date.FormatMMDDYY,V.Local.sSQL)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.String.Build("{0}",v.Caller.Terminal.Trim,V.Local.sRet)
+	
+'	f.Intrinsic.Control.If(v.Caller.Switches,=,"O","or",v.Caller.Switches,=,"I",v.Caller.Switches,=,"QO")
+'		f.Data.DataTable.SetValue("DTCopyTo",-1,"Trans","Q")
+'		F.Intrinsic.String.Build("SELECT top 1 Quote_No FROM Quote_Header WHERE Salesman = '{0}' ORDER BY Quote_No DESC",v.Local.sRet,V.Local.sSQL)
+'		F.Intrinsic.String.Build("update Quote_Header set Salesman = '' WHERE Salesman = '{0}'",v.Local.sRet,V.Local.sUPSQL)
+'	f.Intrinsic.Control.elseIf(v.Caller.Switches,=,"SO")
+'		f.Data.DataTable.SetValue("DTCopyTo",-1,"Trans","O")
+'		F.Intrinsic.String.Build("SELECT top 1 Order_No FROM Order_Header WHERE Salesman = '{0}' ORDER BY Order_No DESC",v.Local.sRet,V.Local.sSQL)
+'		F.Intrinsic.String.Build("update Order_Header set Salesman = '' WHERE Salesman = '{0}'",v.Local.sRet,V.Local.sUPSQL)
+'	f.Intrinsic.Control.EndIf
+
+	F.Data.DataView.Create("DTCopyTo","InvoicesView",22)
+	
+'	F.Data.DataTable.SetValue("DTCopyTo",-1,"Salesman",V.Local.sRet)
+
+	F.Data.DataView.ToString("DTCopyTo","InvoicesView","CUSTOMER*!*PART*!*UM*!*LOCATION*!*QTY*!*SHIP_TO_NAME*!*SHIP_TO_ADDRESS1*!*SHIP_TO_ADDRESS2*!*SHIP_TO_CITY*!*SHIP_TO_STATE*!*SHIP_TO_ZIP*!*SHIP_TO_COUNTRY*!*SHIP_TO_ATTN*!*USER_1*!*USER_2*!*USER_3*!*USER_4*!*USER_5*!*Trans*!*com1*!*com2*!*com3*!*com4","*!*","@!@",V.Local.sRet)
+
+	F.Intrinsic.Variable.LoadUDTFromString(V.uGlobal.uOrders,"Customer*!*Part*!*UM*!*Location*!*Qty_Order*!*Ship_To_Name*!*SHIP_TO_ADDRESS1*!*SHIP_TO_ADDRESS2*!*SHIP_TO_CITY*!*SHIP_TO_STATE*!*SHIP_TO_ZIP*!*SHIP_TO_COUNTRY*!*SHIP_TO_ATTN*!*Header_User1*!*Header_User2*!*Header_User3*!*Header_User4*!*Header_User5*!*Transaction*!*TEXT_LINE1*!*TEXT_LINE2*!*TEXT_LINE3*!*TEXT_LINE4",V.Local.sRet,"@!@","*!*",False)
+
+	f.Data.DataView.Close("DTCopyTo","InvoicesView")
+	'Call the sub and create the Quote.
+
+	V.Local.dStartTime.Set(V.Ambient.Now)
+
+	f.Intrinsic.UI.InvokeWaitDialog("Creating Transaction ....")
+	F.Intrinsic.Control.CallSub(ORDUPLUpload)
+	
+	f.Intrinsic.UI.InvokeWaitDialog("Opening Tranaction ....")
+	F.Intrinsic.UI.Sleep(10)	
+	F.ODBC.Connection!Con.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	' update reset
+'	f.ODBC.Connection!Con.execute(V.Local.sUPSQL)
+	F.Intrinsic.Control.If(V.ODBC.Con!rst.EOF,=,False)
+	'Make sure Quote number is not blank
+		f.Intrinsic.Control.If(v.Caller.Switches,=,"O","or",v.Caller.Switches,=,"I",v.Caller.Switches,=,"QO")
+			F.Intrinsic.String.Build("{0}!*!O",V.ODBC.Con!rst.FieldValTrim!Quote_No,V.Local.sRet)	
+			'update comments desc
+			f.Intrinsic.Control.CallSub(SaveSTDTbl,"TranNo",V.ODBC.Con!rst.FieldValTrim!Quote_No,"tblName","Quote_lines")
+			F.Global.General.CallWrapperSync(251000,V.Local.sRet)
+		f.Intrinsic.Control.elseIf(v.Caller.Switches,=,"SO")
+			F.Intrinsic.String.Build("{0}!*!O!*!*ZDR",V.ODBC.Con!rst.FieldValTrim!Order_No,V.Local.sRet)
+			'update comments desc
+			f.Intrinsic.Control.CallSub(SaveSTDTbl,"TranNo",V.ODBC.Con!rst.FieldValTrim!Order_No,"tblName","Order_lines")
+			F.Global.General.CallWrapperSync(200000,V.Local.sRet)
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.UI.Msgbox("Transaction completed successfully")
+	F.Intrinsic.Control.Else
+		'Quote is blank so let them know to check out the error file.
+		f.Intrinsic.UI.CloseWaitDialog 
+		F.Intrinsic.String.Build("Posted successfully. Could not find the Transaction to open, please try manually .",V.Caller.CompanyCode.Trim,V.Local.sRet)
+		F.Intrinsic.UI.Msgbox(V.Local.sRet,"Warning")
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Con!rst.Close
+	
+	
+'	F.Intrinsic.UI.Sleep(50)	
+	F.Intrinsic.Control.CallSub(frmQuote_UnLoad)
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.UNBlockEvents
+	F.Intrinsic.Control.CallSub(TryCatch,"Sub",V.Ambient.CurrentSubroutine,"Error",V.Ambient.ErrorNumber,"Desc",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.CSQ_Process_Click.End
+
+Program.Sub.CSQ_cmdcustomer_Click.Start
+F.Intrinsic.Control.Try
+
+V.Local.sRet.Declare(String)
+
+	F.Intrinsic.UI.Browser(225,"",V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		'Split the string and set the customer number
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		gui.frmQuote.CSQ_txtCustomer.text(V.Local.sRet(0).Trim)
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(TryCatch,"Sub",V.Ambient.CurrentSubroutine,"Error",V.Ambient.ErrorNumber,"Desc",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.CSQ_cmdcustomer_Click.End
+
+Program.Sub.CSQ_CopyTo_Click.Start
+F.Intrinsic.Control.Try
+
+	f.Intrinsic.Control.CallSub(Get_Data)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(TryCatch,"Sub",V.Ambient.CurrentSubroutine,"Error",V.Ambient.ErrorNumber,"Desc",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.CSQ_CopyTo_Click.End
+
+Program.Sub.CSQ_cmdBrow_Click.Start
+F.Intrinsic.Control.Try
+
+	V.Local.sRet.Declare(String)
+	V.Local.sSSQL.Declare(String)
+
+	f.Intrinsic.Control.BlockEvents
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	f.Intrinsic.Control.If(v.Caller.Switches,=,"O","or",v.Caller.Switches,=,"SO")
+''		'select from Order
+		V.Local.sSSQL.set("select distinct ORD.ORDER_NO,'',ORD.CUSTOMER,Ord.code_sort,customer_PO, NAME_CUSTOMER_SHIP, ADDRESS_1_SHIP, CITY_SHIP, STATE_SHIP, CODE_ZIP_SHIP from  v_ORDER_Header ORD") 
+		f.Intrinsic.String.Build(" {0} join v_order_lines DET on ORD.order_no= DET.order_no left join v_ORDER_SHIP_TO SHIP on ORD.Ship_ID = SHIP.Ship_ID and ORD.Order_no = SHIP.Order_no where DET.Record_NO < '8000' ORDER BY 1 ASC ",V.Local.sSSQL,V.Local.sSSQL) 
+		F.Intrinsic.UI.Browser("select from Order","Con",V.Local.sSSQL,"Order*!**!*Customer*!*Reference*!*Customer PO*!*Customer Name*!*Address*!*City*!*State*!*Zip","80*!*0*!*80*!*100*!*100*!*200*!*200*!*80*!*80*!*80",15000,12000,V.Local.sRet)
+	f.Intrinsic.Control.ElseIf(v.Caller.Switches,=,"I")
+'		'Invoice
+		V.Local.sSSQL.set("SELECT INVOICE, ORDER_NO, CUSTOMER,code_sort,customer_PO,NAME_CUSTOMER_SHIP, ADDRESS1_SHIP, CITY_SHIP, STATE_SHIP, ZIP_SHIP FROM V_ORDER_HIST_HEAD ORDER BY INVOICE ASC ") 
+		F.Intrinsic.UI.Browser("Invoices","Con",V.Local.sSSQL,"Invoice*!*Order*!*Customer*!*Reference*!*Customer PO*!*Customer Name*!*Address*!*City*!*State*!*Zip","80*!*80*!*80*!*100*!*100*!*200*!*200*!*80*!*80*!*80",15000,12000,V.Local.sRet)
+	f.Intrinsic.Control.ElseIf(v.Caller.Switches,=,"QO")
+
+		V.Local.sSSQL.set("select distinct ORD.Quote_NO,'',ORD.CUSTOMER,Ord.code_sort,customer_PO, NAME_CUSTOMER_SHIP, ADDRESS_1_SHIP, CITY_SHIP, STATE_SHIP, CODE_ZIP_SHIP from  v_Quote_Header ORD") 
+		f.Intrinsic.String.Build(" {0} join v_Quote_lines DET on ORD.Quote_no= DET.Quote_no left join v_Quote_SHIP_TO SHIP on ORD.Ship_ID = SHIP.Ship_ID and ORD.Quote_no = SHIP.Quote_no where DET.Record_NO < '8000' ORDER BY 1 ASC ",V.Local.sSSQL,V.Local.sSSQL) 
+		F.Intrinsic.UI.Browser("select from Quotes","Con",V.Local.sSSQL,"Quote*!**!*Customer*!*Reference*!*Customer PO*!*Customer Name*!*Address*!*City*!*State*!*Zip","80*!*0*!*80*!*100*!*100*!*200*!*200*!*80*!*80*!*80",15000,12000,V.Local.sRet)
+	f.Intrinsic.Control.EndIf 
+
+
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		V.Local.sRet.RedimPreserve(0,3)
+		gui.frmQuote.CSQ_txtTranno.Text(V.Local.sRet(0).Trim)
+'		gui.frmQuote.CSQ_txtCustomer.Text(V.Local.sRet(2).Trim)
+		
+		f.Intrinsic.Control.CallSub(RefreshDT)
+	F.Intrinsic.Control.EndIf
+	f.Intrinsic.UI.CloseWaitDialog 
+	f.Intrinsic.Control.UnBlockEvents
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.UnBlockEvents
+	f.Intrinsic.UI.CloseWaitDialog 
+	F.Intrinsic.Control.CallSub(TryCatch,"Sub",V.Ambient.CurrentSubroutine,"Error",V.Ambient.ErrorNumber,"Desc",V.Ambient.ErrorDescription)
+	f.Intrinsic.UI.CloseWaitDialog 
+F.Intrinsic.Control.EndTry	
+Program.Sub.CSQ_cmdBrow_Click.End
+
+Program.Sub.Get_Data.Start
+F.Intrinsic.Control.Try
+
+V.Local.iCount.Declare
+V.Local.sFld.Declare
+v.Local.i.Declare
+V.Local.sSQL.Declare
+V.Local.sFlddet.Declare
+
+	f.Data.DataView.Create("DTLines","DVSel",22,"select=true","")
+	
+	f.Intrinsic.Control.If(v.Dataview.DTLines!DVSel.RowCount,=,0)
+		f.Intrinsic.UI.Msgbox("No lines selected to copy")
+		f.Data.DataView.Close("DTLines","DVSel")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	
+	V.Local.sFld.Set("Part*!*Description*!*UM*!*PL*!*Location*!*QTY*!*Price*!*User_1*!*User_2*!*User_3*!*User_4*!*User_5")
+	V.Local.sFlddet.Set("Part*!*Description*!*UM*!*PL*!*Location*!*QTY*!*Price")
+
+	F.Intrinsic.Control.For(v.Local.i,0,v.Dataview.DTLines!DVSel.RowCount--)
+		f.Intrinsic.Control.If(V.DataView.DTLines!DVSel(v.Local.i).FLAG_BOM!FieldValTrim,=,"Y")
+			Function.Data.DataTable.AddRowByMap("DTCopyTo",V.Local.sFlddet,"COMMENT",V.DataView.DTLines!DVSel(v.Local.i).Description!FieldValTrim,"EA","FG","",1,0)
+		f.Intrinsic.Control.Else
+			Function.Data.DataTable.AddRowByMap("DTCopyTo",V.Local.sFld,V.DataView.DTLines!DVSel(v.Local.i).Part!FieldValTrim,V.DataView.DTLines!DVSel(v.Local.i).Description!FieldValTrim,V.DataView.DTLines!DVSel(v.Local.i).UM!FieldValTrim,V.DataView.DTLines!DVSel(v.Local.i).PL!FieldValTrim,V.DataView.DTLines!DVSel(v.Local.i).Location!FieldValTrim,V.DataView.DTLines!DVSel(v.Local.i).Qty!FieldVal,V.DataView.DTLines!DVSel(v.Local.i).Price!FieldVal,V.DataView.DTLines!DVSel(v.Local.i).User_1!FieldVal,V.DataView.DTLines!DVSel(v.Local.i).User_2!FieldVal,V.DataView.DTLines!DVSel(v.Local.i).User_3!FieldVal,V.DataView.DTLines!DVSel(v.Local.i).User_4!FieldVal,V.DataView.DTLines!DVSel(v.Local.i).User_5!FieldVal)
+		f.Intrinsic.Control.EndIf
+		
+'		f.Data.DataTable.SetValue("DTCopyTo",V.DataTable.DTCopyTo.RowCount--,"Lineno",V.DataTable.DTCopyTo.RowCount)
+	F.Intrinsic.Control.Next(v.Local.i)
+	
+	f.Data.DataView.Close("DTLines","DVSel")
+
+	
+	f.Data.DataTable.SetValue("DTLines",-1,"Select",false)
+	
+
+	F.Data.DataTable.SetSeries("DTCopyTo", "LineNo", 1, 1)
+	
+	gui.frmQuote.ddlTrans.AddItem(v.screen.frmQuote!CSQ_txtTranno.text.trim)
+	gui.frmQuote.ddlTrans.ListIndex(0)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(TryCatch,"Sub",V.Ambient.CurrentSubroutine,"Error",V.Ambient.ErrorNumber,"Desc",V.Ambient.ErrorDescription)
+	f.Intrinsic.UI.CloseWaitDialog 
+F.Intrinsic.Control.EndTry
+Program.Sub.Load_Grid.End
+
+Program.Sub.RefreshDT.Start
+F.Intrinsic.Control.SetErrorHandler("Sub_Err1")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSQL.Declare
+V.Local.sSQLDICT.Declare
+v.local.sTranNo.Declare
+
+f.Intrinsic.UI.InvokeWaitDialog("Processing")
+
+
+f.Intrinsic.Control.If(v.Caller.Switches,=,"O","Or",v.Caller.Switches,=,"SO")
+	f.Intrinsic.String.LPad(v.Screen.frmQuote!CSQ_txtTranno.text,"0",7,v.local.sTranNo)
+	f.Intrinsic.String.Build("select Head.order_no 'OrderNo',Det.Record_no as 'LineNo',Part,Description,UM_Order as UM,product_line as PL,Det.Location,Qty_Ordered as Qty,Price,Extension,CONVERT(0,SQL_BIT) AS 'Select',Head.User_1,Head.User_2,Head.User_3,Head.User_4,Head.User_5,FLAG_BOM from V_ORDER_Header Head Join v_order_lines Det on Head.Order_No =  Det.Order_No where Head.Order_No = '{0}' and Det.Record_NO < '8000' order by Det.Record_no",V.Local.sTranNo,V.Local.sSQL)
+f.Intrinsic.Control.ElseIf(v.Caller.Switches,=,"QO")
+	f.Intrinsic.String.LPad(v.Screen.frmQuote!CSQ_txtTranno.text,"0",7,v.local.sTranNo)
+	f.Intrinsic.String.Build("select Head.Quote_no 'OrderNo',Det.Record_no as 'LineNo',Part,Description,UM_Quote as UM,product_line as PL,Det.Location,Qty_Quoted as Qty,Price,Extension,CONVERT(0,SQL_BIT) AS 'Select',Head.User_1,Head.User_2,Head.User_3,Head.User_4,Head.User_5,FLAG_BOM from V_Quote_Header Head Join v_Quote_lines Det on Head.Quote_No =  Det.Quote_No where Head.Quote_No = '{0}' and Det.Record_NO < '8000'  order by Det.Record_no",V.Local.sTranNo,V.Local.sSQL)
+f.Intrinsic.Control.ElseIf(v.Caller.Switches,=,"I")
+	'Invoice
+	f.Intrinsic.String.LPad(v.Screen.frmQuote!CSQ_txtTranno.text,"0",6,v.local.sTranNo)
+	f.Intrinsic.String.Build("select Head.order_no 'OrderNo',ORDER_LINE as 'LineNo',Part,Description,UM,product_line as PL,Det.Location,Qty_Ordered as Qty,Price,Extension,CONVERT(0,SQL_BIT) AS 'Select',Head.User_1,Head.User_2,Head.User_3,Head.User_4,Head.User_5,FLAG_BOM from V_ORDER_HIST_head Head join V_ORDER_HIST_LINE Det on Head.INVOICE =  Det.INVOICE where Head.INVOICE = '{0}' and ORDER_LINE < '8000'  order by ORDER_LINE",V.Local.sTranNo,V.Local.sSQL)
+f.Intrinsic.Control.EndIf
+
+
+F.Data.DataTable.DeleteRow("DTLines")
+F.Data.DataTable.Acceptchanges("DTLines")
+
+F.Data.DataTable.CreateFromSQL("DTTemp", "con",V.Local.sSQL)
+
+F.Data.DataTable.Merge("DTTemp","DTLines",False,2)
+
+f.Data.DataTable.Close("DTTemp")
+f.Intrinsic.Variable.AddRV("RET","True")
+
+f.Intrinsic.UI.CloseWaitDialog 
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Sub_Err1")
+f.Intrinsic.UI.CloseWaitDialog 
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.RefreshDT.End
+
+Program.Sub.frmQuote_UnLoad.Start
+F.Intrinsic.Control.Try
+
+	F.ODBC.Connection!Con.Close
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.EndTry
+
+Program.Sub.frmQuote_UnLoad.End
+
+Program.Sub.FormatGrid2.Start
+F.Intrinsic.Control.Try
+
+V.Local.sError.Declare(String)
+
+V.Local.sSQL.Declare
+V.Local.iCount.Declare
+v.Local.iTotClmn.Declare
+v.Local.stitle.Declare
+v.Local.i.Declare
+
+
+	f.Data.DataTable.Create("DTCopyTo",true)
+	f.Data.DataTable.AddColumn("DTCopyTo","LineNo","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","CUSTOMER","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","Part","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","Description","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","UM","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","PL","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","Location","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","Qty","long")
+	f.Data.DataTable.AddColumn("DTCopyTo","Price","float")
+'	f.Data.DataTable.AddColumn("DTCopyTo","Extension","float")
+	f.Data.DataTable.AddColumn("DTCopyTo","SHIP_TO_NAME","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","SHIP_TO_ADDRESS1","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","SHIP_TO_ADDRESS2","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","SHIP_TO_CITY","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","SHIP_TO_STATE","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","SHIP_TO_ZIP","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","SHIP_TO_COUNTRY","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","SHIP_TO_ATTN","string")
+	F.Data.DataTable.AddColumn("DTCopyTo","UP","STRING","^")
+	F.Data.DataTable.AddColumn("DTCopyTo","DOWN","STRING","v")
+	F.Data.DataTable.AddColumn("DTCopyTo","MoveLine","STRING","MoveLine")
+	f.Data.DataTable.AddColumn("DTCopyTo","USER_1","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","USER_2","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","USER_3","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","USER_4","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","USER_5","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","Action","string","Remove")
+	
+	f.Data.DataTable.AddColumn("DTCopyTo","Com1","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","Com2","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","Com3","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","Com4","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","Com5","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","Com6","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","Com7","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","Com8","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","Com9","string")
+	f.Data.DataTable.AddColumn("DTCopyTo","Com10","string")
+	
+	F.Data.DataView.Create("DTCopyTo","DVLines")
+	
+'	F.Data.DataView.SetSeries("DTCopyTo","DVLines","ID",1000,1000)
+	
+'	f.Data.DataTable.AddColumn("DTCopyTo","Extension","float")
+'	
+	f.Data.DataTable.AddExpressionColumn("DTCopyTo","Extension","float","Price*Qty")
+	
+	
+
+	gui.frmQuote.GsCopyTo.AddGridViewFromDataView("GridViewTo","DTCopyTo","DVLines")
+
+	gui.frmQuote.GsCopyTo.GetColumnCount("GridViewTo",v.Local.iTotClmn)
+	f.Intrinsic.Math.Sub(v.Local.iTotClmn,1,v.Local.iTotClmn)
+	f.Intrinsic.Control.For(v.Local.i,0,v.Local.iTotClmn,1)
+		gui.frmQuote.GsCopyTo.GetColumnNamebyIndex("GridViewTo",v.Local.i,v.Local.stitle)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo",v.Local.stitle,"AllowEdit",False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo",v.Local.stitle,"ReadOnly",True)
+	
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo",v.Local.stitle,"HeaderFontBold","True")
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo",v.Local.stitle,"HeaderBackColor","#7FFF00")
+	f.Intrinsic.Control.Next(v.Local.i)
+	
+		Gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo","Extension","VisibleIndex",10)
+		
+		gui.frmQuote.GsCopyTo.AddStyleFormatCOndition("GridViewTo", "Action", "tagName1","NotEqual","1")
+		gui.frmQuote.GsCopyTo.SetStyleFormatCOnditionProperty("GridViewTo",  "Action", "tagName1", "backcolor", "#D3D3D3")
+
+		gui.frmQuote.GsCopyTo.AddStyleFormatCOndition("GridViewTo", "Action", "tagName1","NotEqual","1")
+		gui.frmQuote.GsCopyTo.SetStyleFormatCOnditionProperty("GridViewTo",  "Action", "tagName1", "FontBold", True)
+		
+		gui.frmQuote.GsCopyTo.AddStyleFormatCOndition("GridViewTo", "UP", "tagName1","NotEqual","1")
+		gui.frmQuote.GsCopyTo.SetStyleFormatCOnditionProperty("GridViewTo",  "UP", "tagName1", "FontBold", True)
+		
+		gui.frmQuote.GsCopyTo.AddStyleFormatCOndition("GridViewTo", "part", "tagName1","Equal","COMMENT")
+		gui.frmQuote.GsCopyTo.SetStyleFormatCOnditionProperty("GridViewTo",  "part", "tagName1", "backcolor", "yellow")
+		gui.frmQuote.GsCopyTo.SetStyleFormatCOnditionProperty("GridViewTo",  "part", "tagName1", "ApplyToRow", True)
+		
+		gui.frmQuote.GsCopyTo.AddStyleFormatCOndition("GridViewTo", "MoveLine", "tagName1","NotEqual","1")
+		gui.frmQuote.GsCopyTo.SetStyleFormatCOnditionProperty("GridViewTo",  "MoveLine", "tagName1", "backcolor", "#D3D3D3")
+
+		gui.frmQuote.GsCopyTo.AddStyleFormatCOndition("GridViewTo", "MoveLine", "tagName1","NotEqual","1")
+		gui.frmQuote.GsCopyTo.SetStyleFormatCOnditionProperty("GridViewTo",  "MoveLine", "tagName1", "FontBold", True)
+'		
+
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "UP","CellHAlignment", "Center")
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "DOWN","CellHAlignment", "Center")
+
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo","Qty","AllowEdit",True)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo","Qty","ReadOnly",False)
+		
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo","Description","AllowEdit",True)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo","Description","ReadOnly",False)
+
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo","Extension","DisplayCustomNumeric","#,##0.00")
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo","Price","DisplayCustomNumeric","#,##0.00")
+'	
+	
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo","Description","MinWidth",250)
+		
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo","Action","MinWidth",60)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo","Action","MaxWidth",60)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo","LineNo","MinWidth",50)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo","LineNo","MaxWidth",50)
+		
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo","DOWN","MinWidth",50)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo","DOWN","MaxWidth",50)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo","UP","MinWidth",50)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo","UP","MaxWidth",50)
+		
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo","MoveLine","MinWidth",70)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo","MoveLine","MaxWidth",70)
+		
+'		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "MoveLine", "Caption","MoveLine")
+
+
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "CUSTOMER", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "SHIP_TO_NAME", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "SHIP_TO_ADDRESS1", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "SHIP_TO_ADDRESS2", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "SHIP_TO_CITY", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "SHIP_TO_STATE", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "SHIP_TO_ZIP", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "SHIP_TO_COUNTRY", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "SHIP_TO_ATTN", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "USER_1", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "USER_2", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "USER_3", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "USER_4", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "USER_5", "Visible", False)
+		
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "Com1", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "Com2", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "Com3", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "Com4", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "Com5", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "Com6", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "Com7", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "Com8", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "Com9", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "Com10", "Visible", False)
+		
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "DOWN", "Visible", False)
+		gui.frmQuote.GsCopyTo.SetColumnProperty("GridViewTo", "UP", "Visible", False)
+
+		gui.frmQuote.GsCopyTo.SetGridviewProperty("GridViewTo","OptionsSelectionEnableAppearanceFocusedRow",False)
+		
+		gui.frmQuote.GsCopyTo.AddSummaryItem("GridViewTo","Extension","Extension","Sum","","","n")
+		
+		
+		gui.frmQuote.GsCopyTo.MainView("GridViewTo")
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(TryCatch,"Sub",V.Ambient.CurrentSubroutine,"Error",V.Ambient.ErrorNumber,"Desc",V.Ambient.ErrorDescription)
+	f.Intrinsic.UI.CloseWaitDialog 
+F.Intrinsic.Control.EndTry	
+	
+Program.Sub.Get_Data.End
+
+Program.Sub.GsCopyTo_RowCellClick.Start
+F.Intrinsic.Control.SetErrorHandler("Sub_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+Variable.local.sRet.Declare
+V.Local.ICURRROW.Declare(long)
+
+
+'Function.Intrinsic.Debug.InvokeDebugger
+'Function.Intrinsic.Debug.Stop
+
+v.Local.ICURRROW.Set(v.Args.rowindex)
+
+f.Intrinsic.Control.BlockEvents 
+f.Intrinsic.Control.If(V.Args.column,=,"Action")
+	gui.frmQuote.GsCopyTo.GetCellValueByColumnName("GridViewTo",V.Args.column,V.Args.RowIndex,Variable.local.sRet)
+	'check key for Delete
+	f.Intrinsic.Control.If(Variable.local.sRet,=,"Remove")
+		f.Data.DataTable.DeleteRow("DTCopyTo",V.Args.RowHandle)
+		f.Data.DataTable.Acceptchanges("DTCopyTo")
+'		F.Data.DataTable.SetSeries("DTCopyTo", "LineNo", 1, 1)
+		f.Intrinsic.Control.CallSub(ReNumber_Lines)
+	Function.Intrinsic.Control.EndIf
+f.Intrinsic.Control.elseIf(v.Args.column,=,"UP")
+	f.Intrinsic.Control.If(v.Args.rowindex,<>,0)
+		F.Data.DataTable.moverow("DTCopyTo",v.Local.ICURRROW,v.Local.ICURRROW.--)
+		F.Data.DataTable.SetSeries("DTCopyTo", "LineNo", 1, 1)
+		f.Data.DataTable.Acceptchanges("DTCopyTo")
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Elseif(v.Args.column,=,"DOWN")
+	F.Data.DataTable.moverow("DTCopyTo",v.Local.ICURRROW,v.Local.ICURRROW.++)
+	F.Data.DataTable.SetSeries("DTCopyTo", "LineNo", 1, 1)
+	f.Data.DataTable.Acceptchanges("DTCopyTo")
+f.Intrinsic.Control.Elseif(v.Args.column,=,"MoveLine")
+	Function.Intrinsic.UI.InputBox("Please enter new LineNo","Move Line","",v.Local.sRet)
+	f.Intrinsic.Control.If(v.Local.sRet,<>,"***CANCEL***")
+		f.Intrinsic.Math.sub(v.Local.sRet.Long,1,v.Local.sRet)
+		F.Data.DataTable.moverow("DTCopyTo",v.Local.ICURRROW,v.Local.sRet.Long)
+		F.Data.DataTable.SetSeries("DTCopyTo","LineNo", 1, 1)
+		f.Data.DataTable.Acceptchanges("DTCopyTo")
+'		Gui.frmQuote.GsCopyTo.FocusCell("GridViewTo",0,0)
+		gui.frmQuote.GsCopyTo.MainView("GridViewTo")
+	f.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndIf
+f.Intrinsic.Control.UnBlockEvents 
+F.Intrinsic.Control.ExitSub
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Sub_Err")
+f.Intrinsic.Control.UnBlockEvents 
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.GsCopyTo_RowCellClick.End
+
+Program.Sub.Load_Grid.Start
+F.Intrinsic.Control.Try
+
+v.Local.iTotClmn.Declare
+v.Local.stitle.Declare
+v.Local.i.Declare
+
+
+f.Data.DataTable.Create("DTLines",True)
+f.Intrinsic.Control.If(v.Caller.Switches,=,"O","or",v.Caller.Switches,=,"SO")
+	gui.frmQuote.lbl1.Caption("Order No")
+f.Intrinsic.Control.ElseIf(v.Caller.Switches,=,"I")
+	gui.frmQuote.lbl1.Caption("Invoice No")
+f.Intrinsic.Control.ElseIf(v.Caller.Switches,=,"QO")
+	gui.frmQuote.lbl1.Caption("Quote No")
+f.Intrinsic.Control.EndIf
+
+f.Data.DataTable.AddColumn("DTLines","OrderNo","string")
+f.Data.DataTable.AddColumn("DTLines","LineNo","string")
+f.Data.DataTable.AddColumn("DTLines","Part","string")
+f.Data.DataTable.AddColumn("DTLines","Description","string")
+f.Data.DataTable.AddColumn("DTLines","UM","string")
+f.Data.DataTable.AddColumn("DTLines","PL","string")
+f.Data.DataTable.AddColumn("DTLines","Location","string")
+f.Data.DataTable.AddColumn("DTLines","Qty","long")
+f.Data.DataTable.AddColumn("DTLines","Price","float")
+f.Data.DataTable.AddColumn("DTLines","Extension","float")
+f.Data.DataTable.AddColumn("DTLines","Select","Bit")
+f.Data.DataTable.AddColumn("DTLines","User_1","string")
+f.Data.DataTable.AddColumn("DTLines","User_2","string")
+f.Data.DataTable.AddColumn("DTLines","User_3","string")
+f.Data.DataTable.AddColumn("DTLines","User_4","string")
+f.Data.DataTable.AddColumn("DTLines","User_5","string")
+f.Data.DataTable.AddColumn("DTLines","FLAG_BOM","string")
+F.Data.DataView.Create("DTLines","DVLines")
+
+
+gui.frmQuote.GsCopyfrom.AddGridViewFromDataView("GridView","DTLines","DVLines")
+'gui.frmQuote.GsCopyfrom.SetGridViewProperty("GridView", "ColumnPanelRowHeight", "40")
+
+gui.frmQuote.GsCopyfrom.GetColumnCount("GridView",v.Local.iTotClmn)
+f.Intrinsic.Math.Sub(v.Local.iTotClmn,1,v.Local.iTotClmn)
+f.Intrinsic.Control.For(v.Local.i,0,v.Local.iTotClmn,1)
+	gui.frmQuote.GsCopyfrom.GetColumnNamebyIndex("GridView",v.Local.i,v.Local.stitle)
+	gui.frmQuote.GsCopyfrom.SetColumnProperty("GridView",v.Local.stitle,"AllowEdit",False)
+	gui.frmQuote.GsCopyfrom.SetColumnProperty("GridView",v.Local.stitle,"ReadOnly",True)
+
+	gui.frmQuote.GsCopyfrom.SetColumnProperty("GridView",v.Local.stitle,"HeaderFontBold","True")
+	gui.frmQuote.GsCopyfrom.SetColumnProperty("GridView",v.Local.stitle,"HeaderBackColor","#7FFF00")
+'	gui.frmSummary.GsGrid.SetColumnProperty("GridView",v.Local.stitle,"HeaderHAlignment","Center")
+
+'	gui.frmQuote.GsCopyfrom.SetColumnProperty("GridView",v.Local.stitle,"HeaderWordWrap","wrap")
+f.Intrinsic.Control.Next(v.Local.i)
+
+	gui.frmQuote.GsCopyfrom.SetColumnProperty("GridView","Select","AllowEdit",True)
+	gui.frmQuote.GsCopyfrom.SetColumnProperty("GridView","Select","ReadOnly",False)
+
+	gui.frmQuote.GsCopyfrom.SetGridviewProperty("GridView","OptionsViewRowAutoHeight","True")
+
+'	gui.frmQuote.GsCopyfrom.SetColumnProperty("GridView","Part","MinWidth",120)
+	gui.frmQuote.GsCopyfrom.SetColumnProperty("GridView","Description","MinWidth",200)
+	gui.frmQuote.GsCopyfrom.SetColumnProperty("GridView","Select","MinWidth",50)
+	gui.frmQuote.GsCopyfrom.SetColumnProperty("GridView","Select","MaxWidth",50)
+	
+	gui.frmQuote.GsCopyfrom.SetColumnProperty("GridView","LineNo","MinWidth",50)
+	gui.frmQuote.GsCopyfrom.SetColumnProperty("GridView","LineNo","MaxWidth",50)
+
+	gui.frmQuote.GsCopyfrom.SetColumnProperty("GridView","Extension","DisplayCustomNumeric","#,##0.00")
+	gui.frmQuote.GsCopyfrom.SetColumnProperty("GridView","Price","DisplayCustomNumeric","#,##0.00")
+	
+	gui.frmQuote.GsCopyfrom.SetColumnProperty("GridView", "User_1", "Visible", False)
+	gui.frmQuote.GsCopyfrom.SetColumnProperty("GridView", "User_2", "Visible", False)
+	gui.frmQuote.GsCopyfrom.SetColumnProperty("GridView", "User_3", "Visible", False)
+	gui.frmQuote.GsCopyfrom.SetColumnProperty("GridView", "User_4", "Visible", False)
+	gui.frmQuote.GsCopyfrom.SetColumnProperty("GridView", "User_5", "Visible", False)
+
+	gui.frmQuote.GsCopyfrom.SetGridviewProperty("GridView","OptionsSelectionEnableAppearanceFocusedRow","False")
+	
+	gui.frmQuote.GsCopyfrom.MainView("GridView")
+	
+
+	f.Intrinsic.Control.CallSub(FormatGrid2)
+'	F.Intrinsic.Control.CallSub(SetContextMenus)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Sub_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.FormatGrid2.End
+Program.Sub.ReNumber_Lines.Start
+F.Intrinsic.Control.SetErrorHandler("Sub_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iCount.Declare
+V.Local.i.Declare
+
+	F.Intrinsic.Control.For(V.Local.i,0,V.DataTable.DTCopyTo.RowCount--,1)
+		f.Intrinsic.Math.Add(V.Local.iCount,1,V.Local.iCount)
+		F.Data.DataTable.SetValue("DTCopyTo",V.Local.i,"LineNo",V.Local.iCount)
+	F.Intrinsic.Control.Next(V.Local.i)
+	
+	f.Data.DataTable.acceptchanges("DTCopyTo")
+	
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Sub_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.ReNumber_Lines.End
+
+Program.Sub.CSQ_txtTranno_LostFocus.Start
+F.Intrinsic.Control.SetErrorHandler("Sub_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sTxt.Declare
+V.Local.sRet.Declare
+
+V.Local.sTxt.Set(v.Screen.frmQuote!CSQ_txtTranno.text)
+
+f.Intrinsic.Control.If(V.Local.sTxt.trim,=,"")
+	F.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+gui.frmQuote.CSQ_txtTranno.Text(V.Local.sTxt.UCase)
+Function.Data.Dictionary.ReturnKeyFromValue("Invoice",V.Local.sTxt.UCase,V.Local.sRet)
+f.Intrinsic.UI.Msgbox("ReturnKey")
+f.Intrinsic.Control.CallSub(RefreshDT)	
+
+f.Intrinsic.Control.If(v.Args.RET,=,"True")
+	gui.frmQuote.CSQ_cmdBrow.SetFocus
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.UI.Msgbox("no")
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("LBL1")	
+f.Intrinsic.UI.Msgbox("Invalid no")
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Sub_Err")
+
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,=,21087)
+	f.Intrinsic.Control.GoTo("LBL1")
+Function.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.CSQ_txtTranno_LostFocus.End
+
+Program.Sub.CSQ_txtCustomer_LostFocus.Start
+F.Intrinsic.Control.SetErrorHandler("Sub_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sTxt.Declare
+V.Local.sRet.Declare
+
+
+V.Local.sTxt.Set(v.Screen.frmQuote!CSQ_txtCustomer.text)
+
+f.Intrinsic.Control.If(V.Local.sTxt.trim,=,"")
+	F.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+gui.frmQuote.CSQ_txtCustomer.Text(V.Local.sTxt.UCase)
+Function.Data.Dictionary.ReturnKeyFromValue("Customer",V.Local.sTxt.UCase,V.Local.sRet)
+	
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("LBL1")	
+f.Intrinsic.UI.Msgbox("Invalid customer")
+gui.frmQuote.CSQ_txtCustomer.text("")
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Sub_Err")
+
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,=,21087)
+	f.Intrinsic.Control.GoTo("LBL1")
+Function.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.CSQ_txtCustomer_LostFocus.End
+
+Program.Sub.CSQ_cmdView_Click.Start
+F.Intrinsic.Control.SetErrorHandler("Sub_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sTxt.Declare
+V.Local.sRet.Declare
+
+V.Local.sTxt.Set(v.Screen.frmQuote!CSQ_txtTranno.text)
+
+f.Intrinsic.Control.If(V.Local.sTxt.trim,=,"")
+	F.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.UI.InvokeWaitDialog("Processing")
+gui.frmQuote.CSQ_txtTranno.Text(V.Local.sTxt.UCase)
+Function.Data.Dictionary.ReturnKeyFromValue("Invoice",V.Local.sTxt.UCase,V.Local.sRet)
+f.Intrinsic.Control.CallSub(RefreshDT)	
+
+f.Intrinsic.Control.If(v.Args.RET,=,"True")
+	gui.frmQuote.CSQ_cmdBrow.SetFocus
+f.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("LBL1")	
+f.Intrinsic.UI.Msgbox("Invalid no")
+f.Intrinsic.UI.CloseWaitDialog
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Sub_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,=,21087)
+		f.Intrinsic.Control.GoTo("LBL1")
+	Function.Intrinsic.Control.EndIf
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.CSQ_cmdView_Click.End
+
+Program.Sub.cmdInsertLine_Click.Start
+F.Intrinsic.Control.SetErrorHandler("Sub_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+v.Local.lLno.Declare
+
+f.Intrinsic.Math.Add(v.DataTable.DTCopyTo.RowCount,1,v.Local.lLno)
+
+gui.frmQuote.framecomments.Caption("Comments")
+gui.frmQuote.txtdesc.text("")
+gui.frmQuote.txtcomments.Position(210,1590)
+
+gui.frmQuote.txtLno.Text(v.Local.lLno)
+gui.frmQuote.framecomments.Visible(true)
+gui.frmQuote.txtcomments.Visible(true)
+gui.frmQuote.lbllongdesc.Visible(true)
+
+gui.frmQuote.txtdesc.Locked(false)
+gui.frmQuote.txtpart.Visible(false)
+gui.frmQuote.cmdBrowParts.Visible(false)
+gui.frmQuote.lblParts.Visible(false)
+
+gui.frmQuote.txtdesc.SetFocus
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Sub_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdInsertLine_Click.End
+
+Program.Sub.cmdCancel_Click.Start
+F.Intrinsic.Control.SetErrorHandler("Sub_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+gui.frmQuote.framecomments.Visible(false)
+gui.frmQuote.txtcomments.Text("")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Sub_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdCancel_Click.End
+
+Program.Sub.cmdOk_Click.Start
+F.Intrinsic.Control.SetErrorHandler("Sub_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sCOMM.Declare(String)
+V.Local.sFld.Declare
+v.Local.sFldVal.Declare
+v.Local.lLno.Declare
+v.Local.lNewLno.Declare
+v.Local.sRet.Declare
+v.Local.sUOM.Declare
+v.Local.fPrice.Declare
+
+v.Local.lNewLno.Set(v.Screen.frmQuote!txtLno.text)
+f.Intrinsic.Math.Add(v.DataTable.DTCopyTo.RowCount,1,v.Local.lLno)
+
+
+f.Intrinsic.Control.If(v.Screen.frmQuote!framecomments.Caption,=,"PARTS")
+	f.Intrinsic.Control.CallSub(get_price)
+	V.Local.sFld.Set("LineNo*!*Part*!*Description*!*UM*!*PL*!*Location*!*QTY*!*Price")
+	
+	f.Intrinsic.String.Split(v.Args.AltPrice,"*!*",v.Local.sRet)
+	v.Local.sUOM.Set(v.Local.sRet(0))
+	v.Local.fPrice.Set(v.Local.sRet(1))
+	Function.Data.DataTable.AddRowByMap("DTCopyTo",V.Local.sFld,v.Local.lLno,v.Screen.frmQuote!txtpart.text,v.Screen.frmQuote!txtdesc.text,v.Local.sUOM,v.Screen.frmQuote!txtdesc.MetaData0,"",v.Screen.frmQuote!txtQTY.text,v.Local.fPrice)
+f.Intrinsic.Control.Else
+	V.Local.sCOMM.Set(v.Screen.frmQuote!txtcomments.text)
+	Function.Intrinsic.String.LimitSplit(V.Local.sCOMM.Trim,30,V.Local.sCOMM)
+	V.Local.sCOMM.RedimPreserve(0,9)
+	
+	V.Local.sFld.Set("LineNo*!*Part*!*Description*!*UM*!*PL*!*Location*!*QTY*!*Price*!*com1*!*com2*!*com3*!*com4*!*com5*!*com6*!*com7*!*com8*!*com9*!*com10")
+	Function.Data.DataTable.AddRowByMap("DTCopyTo",V.Local.sFld,v.Local.lLno,"COMMENT",v.Screen.frmQuote!txtdesc.text,"EA","FG","",1,0,V.Local.sCOMM(0),V.Local.sCOMM(1),V.Local.sCOMM(2),V.Local.sCOMM(3),V.Local.sCOMM(4),V.Local.sCOMM(5),V.Local.sCOMM(6),V.Local.sCOMM(7),V.Local.sCOMM(8),V.Local.sCOMM(9))
+f.Intrinsic.Control.EndIf
+
+
+v.Local.lNewLno.Set(v.Screen.frmQuote!txtLno.text)
+f.Intrinsic.Control.If(v.Local.lLno,<>,v.Local.lNewLno)
+	F.Data.DataTable.moverow("DTCopyTo",v.Local.lLno.--,v.Local.lNewLno.--)
+	F.Data.DataTable.SetSeries("DTCopyTo", "LineNo", 1, 1)
+	f.Data.DataTable.Acceptchanges("DTCopyTo")
+f.Intrinsic.Control.EndIf
+
+
+gui.frmQuote.framecomments.Visible(false)
+gui.frmQuote.txtcomments.Text("")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Sub_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdOk_Click.End
+
+Program.Sub.cmdBrowParts_Click.Start
+F.Intrinsic.Control.SetErrorHandler("Sub_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+
+V.Local.sRetBrow.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser(100,"",V.Local.sRetBrow)
+
+F.Intrinsic.Control.If(V.Local.sRetBrow,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRetBrow,"*!*",V.Local.sRetBrow)
+		f.Intrinsic.String.Build("{0}{1}",V.Local.sRetBrow(0),V.Local.sRetBrow(1),V.Local.sRet)
+		gui.frmQuote.txtpart.Text(V.Local.sRet)
+		gui.frmQuote.txtdesc.Text(V.Local.sRetBrow(3))
+		gui.frmQuote.txtdesc.SetMetaData(V.Local.sRetBrow(4))
+		gui.frmQuote.txtQTY.SetFocus
+F.Intrinsic.Control.EndIf
+	
+	
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Sub_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdBrowParts_Click.End
+
+Program.Sub.cmdInsertParts_Click.Start
+F.Intrinsic.Control.SetErrorHandler("Sub_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+v.Local.lLno.Declare
+
+
+f.Intrinsic.Control.If(v.Screen.frmQuote!CSQ_txtCustomer.text.trim,=,"")
+	f.Intrinsic.UI.Msgbox("Please select the customer to get pricing for the parts")
+	gui.frmQuote.CSQ_txtCustomer.SetFocus
+	F.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+'gui.frmQuote..ClearGroup(1)
+
+gui.frmQuote.txtpart.text("")
+gui.frmQuote.txtdesc.text("")
+gui.frmQuote.txtQTY.text("")
+
+gui.frmQuote.txtdesc.Locked(true)
+gui.frmQuote.txtpart.Visible(true)
+gui.frmQuote.cmdBrowParts.Visible(true)
+gui.frmQuote.lblParts.Visible(true)
+
+f.Intrinsic.Math.Add(v.DataTable.DTCopyTo.RowCount,1,v.Local.lLno)
+
+	gui.frmQuote.framecomments.Caption("PARTS")
+	gui.frmQuote.txtLno.Text(v.Local.lLno)
+	gui.frmQuote.framecomments.Visible(true)
+	gui.frmQuote.txtcomments.Visible(false)
+	gui.frmQuote.lbllongdesc.Visible(false)
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Sub_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdInsertParts_Click.End
+
+Program.Sub.Get_Price.Start
+F.Intrinsic.Control.SetErrorHandler("Sub_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+v.Local.ssql.Declare
+v.Local.sPclass.Declare
+v.Local.sRet.Declare
+
+f.Intrinsic.String.Build("select discount,price_class from V_CUSTOMER_SHIPTO SHP join v_CUSTOMER_SALES SAL on  SHP.customer = SAL.customer where SHP.customer = '{0}'",v.Screen.frmQuote!CSQ_txtCustomer.text,v.Local.ssql)
+F.ODBC.Connection!Con.OpenLocalRecordsetRO("rstPart",V.Local.sSQL)
+F.Intrinsic.Control.If(V.ODBC.Con!rstPart.EOF,=,False)
+'international Pricing
+	'price class will be 1 ,2,3,4 or 5 to get altprice
+	f.Intrinsic.Control.If(V.ODBC.Con!rstPart.FieldValtrim!price_class,<>,"")
+		f.Intrinsic.String.Build("alt_price_{0}",V.ODBC.Con!rstPart.FieldValTrim!price_class,v.Local.sPclass)
+	f.Intrinsic.Control.Else
+		v.Local.sPclass.Set("Amt_price")
+	F.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Else
+	f.Intrinsic.UI.Msgbox("Price class not found")
+	F.ODBC.Con!rstPart.Close
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.ODBC.Con!rstPart.Close
+
+
+f.Intrinsic.String.Build("select {0} as AltPrice,UM_Inventory from INVENTORY_MSTR MSTR left join INV_ALT_PRICE INV   on INV.Part = MSTR.Part  where MSTR.part = '{1}'",v.Local.sPclass,v.Screen.frmQuote!txtpart.text,v.Local.ssql)
+F.ODBC.Connection!Con.OpenLocalRecordsetRO("rstPart",V.Local.sSQL)
+F.Intrinsic.Control.If(V.ODBC.Con!rstPart.EOF,=,False)
+	f.Intrinsic.String.Build("{0}*!*{1}",V.ODBC.Con!rstPart.FieldValTrim!UM_Inventory,V.ODBC.Con!rstPart.FieldVal!AltPrice,v.Local.sRet)
+	f.Intrinsic.Variable.AddRV("ALTPRICE",v.Local.sRet)
+f.Intrinsic.Control.Else
+	f.Intrinsic.Variable.AddRV("ALTPRICE","EA*!*0")
+F.Intrinsic.Control.EndIf
+F.ODBC.Con!rstPart.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Sub_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Get_Price.End
+
+Program.Sub.SetContextMenus.Start
+F.Intrinsic.Control.SetErrorHandler("Sub_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+	Gui.frmQuote..ContextMenuCreate("ctxSalesHist")
+	Gui.frmQuote.GsCopyTo.ContextMenuAttach("ctxSalesHist")
+	Gui.frmQuote..ContextMenuAddItem("ctxSalesHist","Modify",0,"Modify")
+'	Gui.frmQuote..ContextMenuAddItem("ctxSalesHist","Export",0,"Export")
+'	Gui.frmQuote..ContextMenuAddItem("ctxSalesHist","ResetColumns",0,"Reset Columns")
+	Gui.frmQuote..ContextMenuSetItemEventHandler("ctxSalesHist","Modify","MenuClickModify")
+'	Gui.frmQuote..ContextMenuSetItemEventHandler("ctxSalesHist","Export","MenuClickExport")
+'	Gui.frmQuote..ContextMenuSetItemEventHandler("ctxSalesHist","ResetColumns","MenuClickResetColumns")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Sub_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.SetContextMenus.End
+
+Program.Sub.MenuClickModify.Start
+F.Intrinsic.Control.SetErrorHandler("Sub_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+	
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Sub_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.MenuClickModify.End
+
+Program.Sub.SaveSTDTbl.Start
+F.Intrinsic.Control.SetErrorHandler("Sub_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+		v.Local.sFilter.Declare
+		v.Local.sFlds.Declare
+		V.Local.sSQL.Declare(String)
+		
+		
+		v.Local.sFilter.Set("PART = 'COMMENT'")
+		f.Data.DataView.Create("DTCopyTo","DVTemp",22,v.Local.sFilter,"")
+		
+		Function.Data.DataView.ToDataTableDistinct("DTCopyTo","DVTemp","DTEditDesc","LineNo*!*Part*!*Description")
+		f.Intrinsic.Control.If(v.DataTable.DTEditDesc.RowCount,>,0)
+			f.Data.DataTable.AddColumn("DTEditDesc","TranNo","string",v.Args.TranNo)
+			v.Local.sFlds.Set("TranNo*!*LineNo")
+			'PAD
+			Function.Data.DataTable.SetValueFormat("DTEditDesc",-1,"LineNo","LineNo","000")
+			'RPAD 0
+			f.Data.DataTable.SetValueFormat("DTEditDesc",-1,"LineNo","LineNo","&&&0")
+			
+			f.Intrinsic.Control.If(v.Caller.Switches,=,"SO")
+				F.Data.DataTable.SaveToDB("DTEditDesc","con","Order_lines","v.Local.sFlds",256,"TranNo@!@Order_no*!*LineNo@!@Record_No*!*Part@!@Part*!*Description@!@Description")
+			f.Intrinsic.Control.Else
+				F.Data.DataTable.SaveToDB("DTEditDesc","con","Quote_Lines","v.Local.sFlds",256,"TranNo@!@Quote_no*!*LineNo@!@Record_No*!*Part@!@Part*!*Description@!@Description")
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+		
+		f.Data.Dataview.Close("DTCopyTo","DVTemp")
+		f.Data.DataTable.Close("DTEditDesc")
+			
+		'I - Invoice to New Quote
+		'O - Order to New Quote
+		'SO - Order to New Order
+		'QO -  Quote to New Quote
+	
+'		Insert Header/Footer comments
+		f.Intrinsic.Control.If(v.Caller.Switches,=,"QO")
+			V.Local.sSQL.Set("insert into QUOTE_HF_TEXT(quote_no,Type,on_sordr,On_Invc,ON_Bol,on_pklist,On_Quote,text) ")
+			f.Intrinsic.String.Build(" {0} select '{1}',Type,on_sordr,On_Invc,ON_Bol,on_pklist,On_Quote,text from QUOTE_HF_TEXT where quote_no = '{2}'",V.Local.sSQL,v.Args.TranNo,v.Screen.frmQuote!ddlTrans.text,V.Local.sSQL)
+		f.Intrinsic.Control.elseIf(v.Caller.Switches,=,"SO")
+			V.Local.sSQL.Set("insert into Order_HF_TEXT(order_number,Type,on_sordr,On_Invc,ON_Bol,on_pklist,On_Quote,text) ")
+			f.Intrinsic.String.Build(" {0} select '{1}',,Type,on_sordr,On_Invc,ON_Bol,on_pklist,On_Quote,text from Order_HF_TEXT where order_number = '{2}'",V.Local.sSQL,v.Args.TranNo,v.Screen.frmQuote!ddlTrans.text,V.Local.sSQL)
+		f.Intrinsic.Control.elseIf(v.Caller.Switches,=,"O")
+			V.Local.sSQL.Set("insert into QUOTE_HF_TEXT(quote_no,Type,on_sordr,On_Invc,ON_Bol,on_pklist,On_Quote,text) ")
+			f.Intrinsic.String.Build(" {0} select '{1}',Type,on_sordr,On_Invc,ON_Bol,on_pklist,On_Quote,text from Order_HF_TEXT where order_number = '{2}'",V.Local.sSQL,v.Args.TranNo,v.Screen.frmQuote!ddlTrans.text,V.Local.sSQL)	
+		f.Intrinsic.Control.elseIf(v.Caller.Switches,=,"I")
+			V.Local.sSQL.Set("insert into QUOTE_HF_TEXT(quote_no,Type,on_sordr,On_Invc,ON_Bol,on_pklist,On_Quote,text) ")
+			f.Intrinsic.String.Build(" {0} select '{1}',Order_Type,on_sordr,On_Invc,ON_Bol,on_pklist,On_Quote,text from ORDER_H_HF_TEXT where Invc_number = '{2}'",V.Local.sSQL,v.Args.TranNo,v.Screen.frmQuote!ddlTrans.text,V.Local.sSQL)
+		f.Intrinsic.Control.EndIf
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Sub_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.SaveSTDTbl.End
+
+Program.Sub.OverWrite_Quote.Start
+F.Intrinsic.Control.SetErrorHandler("Sub_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iCount.Declare
+V.Local.sRet.Declare
+V.Local.sQuote.Declare
+V.Local.sFile.Declare
+V.Local.sPath.Declare
+V.Local.sTempFull.Declare
+v.Local.sParam.Declare
+V.Local.SSQL.Declare
+V.Local.sTemp.Declare
+v.Local.iCnt.Declare
+v.Local.sHold.Declare
+V.Local.sLine.Declare
+v.Local.sCustomer.Declare
+v.Local.sLOC.Declare
+v.Local.sPL.Declare
+
+f.Intrinsic.Control.BlockEvents
+
+f.Intrinsic.UI.InvokeWaitDialog("Creating Transaction ....")
+
+V.Local.sQuote.Set(v.Screen.frmQuote!ddlTrans.text)
+
+
+v.Local.sCustomer.Set(V.Screen.frmQuote!CSQ_txtCustomer.Text)
+f.Intrinsic.String.RPad(v.Local.sCustomer," ",6,v.Local.sCustomer)
+F.Intrinsic.Control.For(V.Local.iCnt,V.DataTable.DTCopyTo.RowCount--)
+
+	
+	F.Intrinsic.String.Concat("Q",v.Local.sCustomer," ",V.Local.sQuote,V.Local.sTemp)
+			
+	'Part
+	F.Intrinsic.String.Concat(v.Local.sTemp,v.DataTable.DTCopyTo(v.Local.iCnt).Part!FieldValString,V.Local.sTemp)
+	
+	f.Intrinsic.String.RPad(v.Local.sTemp," ",53,v.Local.sTemp)
+	
+	'Location
+	f.Intrinsic.String.RPad(v.DataTable.DTCopyTo(v.Local.iCnt).Location!FieldValString," ",2,v.Local.sLOC)
+	F.Intrinsic.String.Concat(v.Local.sTemp,v.Local.sLOC,V.Local.sTemp)
+	
+	'Product line
+	f.Intrinsic.String.RPad(v.DataTable.DTCopyTo(v.Local.iCnt).PL!FieldValString," ",2,v.Local.sPL)
+	
+	F.Intrinsic.String.Concat(V.Local.sTemp,v.Local.sPL,V.Local.sTemp)
+
+	'Update comments
+	f.Intrinsic.Control.If(v.DataTable.DTCopyTo(v.Local.iCnt).Part!FieldValtrim,=,"COMMENT")
+		f.Intrinsic.String.RPad(v.Local.sTemp," ",60,v.Local.sTemp)
+		f.Intrinsic.String.RPad(v.DataTable.DTCopyTo(v.Local.iCnt).Description!FieldValString," ",30,v.Local.sHold)
+		F.Intrinsic.String.Concat(V.Local.sTemp,v.Local.sHold,V.Local.sTemp)
+	f.Intrinsic.Control.EndIf
+	
+	'line number 001-999
+	F.Intrinsic.String.LPad(v.DataTable.DTCopyTo(v.Local.iCnt).LineNo!FieldValString,"0",3,V.Local.sLine)
+	f.Intrinsic.String.RPad(v.Local.sTemp," ",90,v.Local.sTemp)
+	F.Intrinsic.String.Concat(V.Local.sTemp,V.Local.sLine,V.Local.sTemp)
+	
+	'Line type			
+	F.Intrinsic.String.Concat(V.Local.sTemp,"S",V.Local.sTemp)
+				
+	'quantity 9.4 13
+	f.Intrinsic.String.RPad(v.Local.sTemp," ",94,v.Local.sTemp)
+	f.Intrinsic.String.Format(v.DataTable.DTCopyTo(v.Local.iCnt).QTY!FieldValfloat,"0.0000",v.Local.sHold)
+	f.Intrinsic.String.Replace(v.Local.sHold,".","",v.Local.sHold)
+	f.Intrinsic.String.LPad(v.Local.sHold,"0",13,v.Local.sHold)
+	F.Intrinsic.String.Concat(V.Local.sTemp,V.Local.sHold,V.Local.sTemp)
+				
+	'UM
+	F.Intrinsic.String.RPad(V.Local.sTemp," ",283,V.Local.sTemp)
+	F.Intrinsic.String.Concat(V.Local.sTemp,v.DataTable.DTCopyTo(v.Local.iCnt).UM!FieldValString,V.Local.sTemp)
+	
+	F.Intrinsic.String.Concat(V.local.sTempFull,V.local.sTemp,V.Ambient.NewLine,V.Local.sTempFull)
+
+F.Intrinsic.Control.Next(V.Local.iCnt)
+
+	F.Intrinsic.String.Concat("QOLINESUPLOAD",V.Caller.Terminal,V.Caller.CompanyCode,V.Local.sFile)
+	F.Intrinsic.String.Concat(V.Caller.FilesDir,"\",V.Local.sFile,V.Local.sPath)
+	F.Intrinsic.File.String2File(V.Local.sPath,V.Local.sTempFull)
+
+	'Delete old rows of the Order
+	F.Intrinsic.String.Build("Delete from quote_lines where Quote_No = '{0}' and Record_Type = 'L'",V.Local.sQuote,V.Local.SSQL)	
+	f.ODBC.Connection!con.Execute(v.Local.sSQL)	
+	'Upload
+	f.Intrinsic.String.Build("{0}!*!Q!*!{1}",v.Local.sQuote,v.Local.sPath,v.Local.sParam)
+	F.Global.General.CallWrapperSync(7020,v.Local.sParam)		
+
+
+F.Intrinsic.UI.Sleep(5)	
+f.Intrinsic.UI.InvokeWaitDialog("Opening Tranaction ....")
+
+F.Intrinsic.String.Build("{0}!*!O",V.Local.sQuote,V.Local.sRet)	
+F.Global.General.CallWrapperSync(251000,V.Local.sRet)
+
+f.Intrinsic.UI.Msgbox("Transaction completed successfully")
+
+f.Intrinsic.Control.UNBlockEvents
+F.Intrinsic.Control.CallSub(frmQuote_UnLoad)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Sub_Err")
+	f.Intrinsic.Control.UNBlockEvents
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.OverWrite_Quote.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$$}$12:00:00 AM$}$False
+${$3$}$0$}$$}$-1$}$-1$}$$}$1/1/1900$}$ORDUPL FORMATTED UDTS, FILE WRITING, AND CALLING UPLOAD
+
+Program.Sub.Comments.End
